@@ -1,0 +1,37 @@
+body{
+  height: 100vh;
+  position: relative;
+}
+
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+.button-col {
+  color: white;
+  background-color: #005a31;
+  border-color: #005a31;
+}
+.button-col:hover {
+  color: #cdcdcd;
+}
+/* Other Classes for Page Styling */
+
+foot {
+  background: #005a31;
+  background: linear-gradient(to right, #005a31, #4c906d);
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+small.footer-text {
+  color: white;
+}

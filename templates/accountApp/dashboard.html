@@ -1,0 +1,134 @@
+{% extends 'baseTemplates/base.html' %}
+
+{% block content %}
+    <!-- Status row starting here -->
+    <div class="row mt-5 ml-3 mr-3">
+        <div class="col-sm-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h5 class="card-title">Total Orders</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h5 class="card-title">Delivered Orders</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h5 class="card-title">Pending Orders</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard starting here -->
+    <h2 class="ml-5 mt-3">Dashboard</h2>
+    <hr>
+    <div class="row mb-5">
+        <div class="col-md-5 ml-4">
+            <div class="card">
+                <h5 class="card-header">
+                    Customers
+                    <a class="btn float-right button-col" href="#">Create Customer</a>
+                </h5>
+
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Customer</th>
+                            <th scope="col">Orders</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mr-4">
+            <div class="card">
+                <h5 class="card-header">
+                    Orders
+                    <a class="btn float-right button-col" href="#">Create Order</a>
+                </h5>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Date Ordered</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Update</th>
+                            <th scope="col">Remove</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

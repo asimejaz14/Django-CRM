@@ -1,0 +1,40 @@
+{% load static %}
+<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #005A31;">
+    <a class="navbar-brand" href="{% url 'dashboard' %}">
+        <img class="rounded-circle" src="{% static 'images/a.jpg' %}" alt="logo" style="width: 35px; height: 35px;">
+        Django CRM
+    </a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav">
+            {% url 'dashboard' as url %}
+            <li class="nav-item {% if request.path == url %}active{% endif %}">
+                <a class="nav-link" href="{{ url }}">Dashboard</a>
+            </li>
+            {% url 'about' as url %}
+            <li class="nav-item {% if request.path == url %}active{% endif %}">
+                <a class="nav-link" href="{{ url }}">About</a>
+            </li>
+            {% url 'customer' as url %}
+            <li class="nav-item {% if request.path == url %}active{% endif %}">
+                <a class="nav-link" href="{{ url }}">Customer</a>
+            </li>
+            {% url 'products' as url %}
+            <li class="nav-item {% if request.path == url %}active{% endif %}">
+                <a class="nav-link" href="{{ url }}">Products</a>
+            </li>
+
+
+
+        </div>
+        <form class="form-inline ml-auto">
+            <label>
+                <input type="text" class="form-control mr-sm-2" placeholder="Search">
+            </label>
+            <button type="submit" class="btn btn-outline-light">Search</button>
+        </form>
+    </div>
+</nav>
