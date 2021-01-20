@@ -32,6 +32,10 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'livereload',
+    'admin_interface',
+    # 'flat_responsive', # only if django version < 2.0
+    # 'flat', # only if django version < 1.9
+    'colorfield',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,6 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accountApp.apps.AccountappConfig',
 ]
+
+# adding for modern Django admin interface for >= 3.0
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 MIDDLEWARE = [
 
