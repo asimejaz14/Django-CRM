@@ -6,6 +6,7 @@ django-colorfield==0.4.1
 django-flat-responsive==2.0
 django-flat-theme==1.1.4
 django-livereload-server==0.3.2
+django-phone-field==1.8.1
 pytz==2020.5
 six==1.15.0
 soupsieve==2.1

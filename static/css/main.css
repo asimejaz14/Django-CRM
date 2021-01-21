@@ -35,3 +35,7 @@ foot {
 small.footer-text {
   color: white;
 }
+
+i.remove-btn {
+  color: black;
+}

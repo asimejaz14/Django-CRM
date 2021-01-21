@@ -4,7 +4,7 @@
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-title">Customer</h5>
+                    <h5 class="card-title">Customers</h5>
                 </div>
                 <div class="card-body">
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -46,21 +46,14 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-            </tr>
+            {% for customer_order in customers_orders %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ customer_order.name }}</td>
+                    <td>{{ customer_order.total }}</td>
+                </tr>
+            {% endfor %}
+
             </tbody>
         </table>
     </div>

@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'phone_field',
     'livereload',
     'admin_interface',
     # 'flat_responsive', # only if django version < 2.0

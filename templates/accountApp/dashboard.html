@@ -1,5 +1,5 @@
 {% extends 'baseTemplates/base.html' %}
-
+{% load static %}
 {% block content %}
     <!-- Status row starting here -->
     <div class="row mt-5 ml-3 mr-3">
@@ -9,8 +9,11 @@
                     <h5 class="card-title">Total Orders</h5>
                 </div>
                 <div class="card-body">
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    {% if total_orders %}
+                        <p class="card-text">{{ total_orders }}</p>
+                    {% else %}
+                        <p class="card-text">0</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -20,8 +23,12 @@
                     <h5 class="card-title">Delivered Orders</h5>
                 </div>
                 <div class="card-body">
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    {% if delivered_orders %}
+                        <p class="card-text">{{ delivered_orders }}</p>
+                    {% else %}
+                        <p class="card-text">0</p>
+                    {% endif %}
+
                 </div>
             </div>
         </div>
@@ -31,8 +38,11 @@
                     <h5 class="card-title">Pending Orders</h5>
                 </div>
                 <div class="card-body">
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    {% if pending_orders %}
+                        <p class="card-text">{{ pending_orders }}</p>
+                    {% else %}
+                        <p class="card-text">0</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -59,21 +69,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                        </tr>
+                        {% for customer_order in customers_orders %}
+                            <tr>
+                                <th scope="row">{{ forloop.counter }}</th>
+                                <td>{{ customer_order.name }}</td>
+                                <td>{{ customer_order.total }}</td>
+                            </tr>
+                        {% endfor %}
+
+
                         </tbody>
                     </table>
                 </div>
@@ -88,9 +92,11 @@
                 <div class="card-body">
                     <table class="table table-striped">
                         <thead>
+
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Product</th>
+                            <th scope="col">Customer</th>
                             <th scope="col">Date Ordered</th>
                             <th scope="col">Status</th>
                             <th scope="col">Update</th>
@@ -98,31 +104,18 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
+                        {% for order in orders %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ order.product }}</td>
+                                <td>{{ order.customer }}</td>
+                                <td>{{ order.date_created }}</td>
+                                <td>{{ order.status }}</td>
+                                <td><a href="#"><i class="bi bi-arrow-repeat remove-btn"></i></a></td>
+                                <td><a href="#"><i class="bi bi-trash remove-btn"></i></a></td>
+                            </tr>
+                        {% endfor %}
 
-                        </tr>
                         </tbody>
                     </table>
                 </div>

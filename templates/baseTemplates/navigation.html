@@ -18,9 +18,9 @@
             <li class="nav-item {% if request.path == url %}active{% endif %}">
                 <a class="nav-link" href="{{ url }}">About</a>
             </li>
-            {% url 'customer' as url %}
+            {% url 'customers' as url %}
             <li class="nav-item {% if request.path == url %}active{% endif %}">
-                <a class="nav-link" href="{{ url }}">Customer</a>
+                <a class="nav-link" href="{{ url }}">Customers</a>
             </li>
             {% url 'products' as url %}
             <li class="nav-item {% if request.path == url %}active{% endif %}">
