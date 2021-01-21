@@ -31,8 +31,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # to add phone field in models
     'phone_field',
+
+    # to keep reloading (at the backend) after making changes
     'livereload',
+
+    # to change admin interface
     'admin_interface',
     # 'flat_responsive', # only if django version < 2.0
     # 'flat', # only if django version < 1.9
