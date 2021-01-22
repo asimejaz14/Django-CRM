@@ -69,13 +69,14 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {% for customer_order in customers_orders %}
+                        {% for customer in customers_orders %}
                             <tr>
                                 <th scope="row">{{ forloop.counter }}</th>
-                                <td>{{ customer_order.name }}</td>
-                                <td>{{ customer_order.total }}</td>
+                                <td>{{ customer.name }}</td>
+                                <td>{{ customer.order_set.all.count }}</td>
                             </tr>
                         {% endfor %}
+
 
 
                         </tbody>

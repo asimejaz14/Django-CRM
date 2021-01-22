@@ -41,18 +41,33 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Customers</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
                 <th scope="col">Orders</th>
+                <th scope="col">Products</th>
             </tr>
             </thead>
             <tbody>
-            {% for customer_order in customers_orders %}
+            {% for customer in customers %}
                 <tr>
                     <th scope="row">{{ forloop.counter }}</th>
-                    <td>{{ customer_order.name }}</td>
-                    <td>{{ customer_order.total }}</td>
+                    <td>{{ customer.name }}</td>
+                    <td>{{ customer.email }}</td>
+                    <td>{{ customer.phone }}</td>
+                    <td>{{ customer.order_set.count }}</td>
                 </tr>
             {% endfor %}
+
+{#            {% for customer in customers %}#}
+{#                <tr>#}
+{#                    <th scope="row">{{ forloop.counter }}</th>#}
+{#                    <td>{{ customer.name }}</td>#}
+{#                    <td>{{ customer.email }}</td>#}
+{#                    <td>{{ customer.phone }}</td>#}
+{#                    <td>{{ customer.order_set.count }}</td>#}
+{#                </tr>#}
+{#            {% endfor %}#}
 
             </tbody>
         </table>
