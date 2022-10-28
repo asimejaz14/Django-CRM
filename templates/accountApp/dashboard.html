@@ -73,7 +73,7 @@
                             <tr>
                                 <th scope="row">{{ forloop.counter }}</th>
                                 <td>{{ customer.name }}</td>
-                                <td>{{ customer.order_set.all.count }}</td>
+                                <td>{{ customer.order_set.count }}</td>
                             </tr>
                         {% endfor %}
 
